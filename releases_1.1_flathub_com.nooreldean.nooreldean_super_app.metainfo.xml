@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.nooreldean.nooreldean_super_app</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Proprietary</project_license>
+  <name>Nooreldean Super App</name>
+  <summary>Personalized fitness training, nutrition plans, gamification, and habit tracking super app</summary>
+  <description>
+    <p>
+      Nooreldean Super App is a comprehensive fitness and lifestyle coaching application.
+      Features include personalized training (sets/reps/RIR), nutrition planning with scientific solvers,
+      gamification (coins, streaks, leaderboards), habit tracking, and a built-in community hub.
+    </p>
+  </description>
+  <launchable type="desktop-id">com.nooreldean.nooreldean_super_app.desktop</launchable>
+  <url type="homepage">https://nooreldeancoaching.tech</url>
+  <url type="bugtracker">https://github.com/dalia216/nooreldean-super-app2/issues</url>
+  <provides>
+    <binary>nooreldean_super_app</binary>
+  </provides>
+  <developer_name>Nooreldean Coaching</developer_name>
+</component>

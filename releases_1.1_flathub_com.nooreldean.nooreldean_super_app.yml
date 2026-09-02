@@ -1,0 +1,41 @@
+app-id: com.nooreldean.nooreldean_super_app
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+command: nooreldean_super_app
+
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --share=network
+  - --device=dri
+  - --filesystem=xdg-download
+  - --filesystem=xdg-pictures
+
+modules:
+  - name: nooreldean-super-app
+    buildsystem: simple
+    build-commands:
+      - install -d /app/bin /app/lib /app/share/applications /app/share/icons/hicolor/512x512/apps /app/share/icons/hicolor/256x256/apps /app/share/icons/hicolor/128x128/apps /app/share/icons/hicolor/64x64/apps /app/share/metainfo
+      - cp -r nooreldean_super_app data lib /app/lib/ 2>/dev/null || cp -r * /app/lib/
+      - ln -s /app/lib/nooreldean_super_app /app/bin/nooreldean_super_app
+      - install -Dm644 nooreldean_super_app.desktop /app/share/applications/com.nooreldean.nooreldean_super_app.desktop
+      - sed -i 's/^Icon=.*/Icon=com.nooreldean.nooreldean_super_app/' /app/share/applications/com.nooreldean.nooreldean_super_app.desktop
+      - install -Dm644 logo.png /app/share/icons/hicolor/512x512/apps/com.nooreldean.nooreldean_super_app.png
+      - install -Dm644 logo.png /app/share/icons/hicolor/256x256/apps/com.nooreldean.nooreldean_super_app.png
+      - install -Dm644 logo.png /app/share/icons/hicolor/128x128/apps/com.nooreldean.nooreldean_super_app.png
+      - install -Dm644 logo.png /app/share/icons/hicolor/64x64/apps/com.nooreldean.nooreldean_super_app.png
+      - install -Dm644 logo.png /app/share/icons/hicolor/512x512/apps/nooreldean_super_app.png
+      - install -Dm644 com.nooreldean.nooreldean_super_app.metainfo.xml /app/share/metainfo/com.nooreldean.nooreldean_super_app.metainfo.xml
+    sources:
+      - type: archive
+        url: https://github.com/dalia216/nooreldean-super-app2/releases/latest/download/nooreldean-super-app-linux-x86_64-1.1.0.tar.gz
+        sha256: 0000000000000000000000000000000000000000000000000000000000000000
+      - type: file
+        path: nooreldean_super_app.desktop
+      - type: file
+        path: logo.png
+      - type: file
+        path: com.nooreldean.nooreldean_super_app.metainfo.xml
